@@ -1,10 +1,7 @@
 const request = require('supertest');
-const { app, server, utils } = require('../src/app');
+const { app, utils } = require('../src/app');
 
 describe('API Endpoints', () => {
-  afterAll(() => {
-    server.close();
-  });
 
   test('GET / should return API info', async () => {
     const response = await request(app).get('/');
